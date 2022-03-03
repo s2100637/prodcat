@@ -1,1 +1,33 @@
-<p>phone-list works!</p>
+<article>
+    <h1>Tuoteluettelo</h1>
+    <div>
+        <aside>
+            <div>
+                <label for="search-text">Search:</label>
+                <input type="text" id="search-text" aria-describedby="search-text" autocomplete="off" placeholder="Search..." [(ngModel)]="searchText" />
+            </div>
+            <p>Sort by:</p>
+            <select (change)="selectChangeHandler($event)">
+                <option value="age">Newest</option>
+                <option value="name">Alphabetically</option>
+            </select>
+        </aside>
+        <section>
+            <ul>
+                <li *ngFor="let phone of productList | filter:searchText | orderBy: order">
+                    <div>
+                        <figure>
+                            <img src="../../assets/{{ phone.imageUrl }}" alt="phone image">
+                        </figure>
+                    </div>
+                    <div>
+                        <h2>
+                            <a routerLink="{{ '/item' + phone.id }}">{{ phone.name }}</a>
+                        </h2>
+                        <p>{{ phone.snippet }}</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </div>
+</article>
