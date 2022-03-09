@@ -6,9 +6,9 @@ import { PhoneDetailComponent } from './phone-detail/phone-detail.component';
 import { PhoneListComponent } from './phone-list/phone-list.component';
 
 const routes: Routes = [
-  { path: 'phones-list', component: PhoneListComponent },
+  { path: 'phone-list', component: PhoneListComponent },
   { path: 'item/:id', component: PhoneDetailComponent },
-  { path: '', redirectTo: '/phones-list', pathMatch: 'full' },
+  { path: '', redirectTo: '/phone-list', pathMatch: 'full' },
 ];
 
 @NgModule({
