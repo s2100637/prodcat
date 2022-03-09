@@ -1,0 +1,17 @@
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.row > * {
+    flex-basis: 0px;
+}
+
+.info {
+    flex-grow: 1;
+}
+
+.image {
+    border: 1px solid black;
+    width: 150px;
+}

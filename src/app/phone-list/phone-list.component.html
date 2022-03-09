@@ -16,16 +16,18 @@
         <section class="products">
             <ul>
                 <li *ngFor="let phone of productList | filter:searchText | orderBy: order">
-                    <div class="">
-                        <figure>
-                            <img src="../../assets/{{ phone.imageUrl }}" alt="phone image">
-                        </figure>
-                    </div>
-                    <div class="">
-                        <p>
-                            <a routerLink="{{ '/item/' + phone.id }}">{{ phone.name }}</a>
-                        </p>
-                        <p>{{ phone.snippet }}</p>
+                    <div class="row">
+                        <div>
+                            <figure>
+                                <img src="../../assets/{{ phone.imageUrl }}" alt="phone image">
+                            </figure>
+                        </div>
+                        <div class="description">
+                            <p>
+                                <a routerLink="{{ '/item/' + phone.id }}">{{ phone.name }}</a>
+                            </p>
+                            <p>{{ phone.snippet }}</p>
+                        </div>
                     </div>
                 </li>
             </ul>
