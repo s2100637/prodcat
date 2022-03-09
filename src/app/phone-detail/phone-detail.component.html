@@ -1,1 +1,63 @@
-<p>phone-detail works!</p>
+<main *ngIf="allReady">
+    <h1>Product Details</h1>
+    <div class="row">
+        <article>
+            <figure>
+                <img id="view-img" src="{{ 'assets/img/phones/' + phoneId + '.0.jpg' }}" alt="{{ chosenPhone.name }}">
+            </figure>
+        </article>
+        <article class="info">
+            <h1 id="name">{{ chosenPhone.name }}</h1>
+            <hr>
+            <p id="description">{{ chosenPhone.description }}</p>
+            <div class="row">
+                <section *ngFor="let image of chosenPhone.images">
+                    <figure>
+                        <img class="image" (click)="changeImg($event)" src="{{ 'assets/' +image }}" alt="{{ phoneId }}">
+                    </figure>
+                </section>
+            </div>
+        </article>
+    </div>
+
+    <article class="row">
+        <section class="info">
+            <h2>Availability and Networks</h2>
+            <h4>Availability</h4>
+            <p>{{ chosenPhone.availability }}</p>
+        </section>
+
+        <section class="info">
+            <h2>Battery</h2>
+            <h4>Type</h4>
+            <p>{{ chosenPhone.battery.type }}</p>
+            <h4>Talk Time</h4>
+            <p>{{ chosenPhone.battery.talkTime }}</p>
+            <h4>Standby Time (max)</h4>
+            <p>{{ chosenPhone.battery.standbyTime }}</p>
+        </section>
+
+        <section class="info">
+            <h2>Storage and Memory</h2>
+            <h4>RAM</h4>
+            <p>{{ chosenPhone.storage.ram }}</p>
+            <h4>Internal Storage</h4>
+            <p>{{ chosenPhone.storage.flash }}</p>
+        </section>
+
+        <section class="info">
+            <h2>Connectivity</h2>
+            <h4>Network Support</h4>
+            <p>{{ chosenPhone.connectivity.cell }}</p>
+            <h4>WiFi</h4>
+            <p>{{ chosenPhone.connectivity.wifi }}</p>
+            <h4>Bluetooth</h4>
+            <p>{{ chosenPhone.connectivity.bluetooth }}</p>
+            <h4>Infrared</h4>
+            <p>{{ chosenPhone.connectivity.infrared }}</p>
+            <h4>GPS</h4>
+            <p>{{ chosenPhone.connectivity.gps }}</p>
+        </section>
+    </article>
+
+</main>
