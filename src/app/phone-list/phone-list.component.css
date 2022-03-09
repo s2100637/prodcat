@@ -1,0 +1,23 @@
+ul {
+    list-style-type: none;
+}
+
+li {
+    border: 1px solid lightgray;
+    border-radius: 0.5rem;
+    margin: 2rem;
+}
+
+.finder {
+    float: left;
+    width: 14%;
+}
+.products {
+    margin-left: 14%;
+    width: 70%;
+}
+
+img {
+    width: 10rem;
+}
+

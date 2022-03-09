@@ -1,10 +1,11 @@
 <article>
-    <h1>Tuoteluettelo</h1>
+    <h1>Product Cataloque</h1>
     <div>
-        <aside>
+        <aside class="finder">
             <div>
                 <label for="search-text">Search:</label>
-                <input type="text" id="search-text" aria-describedby="search-text" autocomplete="off" placeholder="Search..." [(ngModel)]="searchText" />
+                <br>
+                <input type="text" id="search-text" aria-describedby="search-text" autocomplete="off" placeholder="Search..." [(ngModel)]="searchText">
             </div>
             <p>Sort by:</p>
             <select (change)="selectChangeHandler($event)">
@@ -12,18 +13,18 @@
                 <option value="name">Alphabetically</option>
             </select>
         </aside>
-        <section>
+        <section class="products">
             <ul>
                 <li *ngFor="let phone of productList | filter:searchText | orderBy: order">
-                    <div>
+                    <div class="">
                         <figure>
                             <img src="../../assets/{{ phone.imageUrl }}" alt="phone image">
                         </figure>
                     </div>
-                    <div>
-                        <h2>
-                            <a routerLink="{{ '/item' + phone.id }}">{{ phone.name }}</a>
-                        </h2>
+                    <div class="">
+                        <p>
+                            <a routerLink="{{ '/item/' + phone.id }}">{{ phone.name }}</a>
+                        </p>
                         <p>{{ phone.snippet }}</p>
                     </div>
                 </li>

@@ -31,7 +31,7 @@ export class PhoneListComponent implements OnInit {
       this.productList.sort((a, b) => (a.age < b.age) ? 1 : (a.age === b.age) ? ((a.age < b.age) ? 1 : -1) : -1 )
     },
     (error: any) => {
-      console.log('http-error:');
+      console.log('http-error: ');
       console.log(error);
     });
   }
