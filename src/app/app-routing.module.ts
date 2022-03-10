@@ -6,16 +6,16 @@ import { PhoneDetailComponent } from './phone-detail/phone-detail.component';
 import { PhoneListComponent } from './phone-list/phone-list.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/phone-list', pathMatch: 'full' },
   { path: 'phone-list', component: PhoneListComponent },
-  { path: 'item/:id', component: PhoneDetailComponent },
-  { path: '', redirectTo: '/', pathMatch: 'full' },
+  { path: 'item/:id', component: PhoneDetailComponent }  
 ];
 
 @NgModule({
   imports: [
     CommonModule,
-    [RouterModule.forRoot(routes)]
+    [ RouterModule.forRoot(routes) ]
   ],
-  exports: [RouterModule]
+  exports: [ RouterModule ]
 })
 export class AppRoutingModule { }
